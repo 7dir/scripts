@@ -1,0 +1,10 @@
+https://support.rackspace.com/how-to/mysql-resetting-a-lost-mysql-root-password/
+
+mysql -uroot
+use mysql;
+update user set authentication_string=PASSWORD("MySQLPassword") where User='root';
+flush privileges;
+quit
+
+sudo /etc/init.d/mysql stop
+sudo /etc/init.d/mysql start
